@@ -1,7 +1,6 @@
 export class Recordatorio {
-    constructor(titulo, fecha, hora){
+    constructor(titulo, fechaHora){
         this.titulo = titulo;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fechaHora = fechaHora;
     }
 }
