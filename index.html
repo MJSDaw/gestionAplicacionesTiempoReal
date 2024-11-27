@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="estilos/header.css">
+    <link rel="stylesheet" href="estilos/recordatorios.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     </style>
@@ -14,14 +15,25 @@
         <div id="reloj"></div>
         <div id="fecha"></div>
         <nav>
-            <button id="r" onclick="irA('r')">Recordatorios</button>
-            <button id="l" class="nav-button-active" onclick="irA('l')">Listas</button>
+            <button id="r" class="nav-button-active" onclick="irA('r')">Recordatorios</button>
+            <button id="l" onclick="irA('l')">Listas</button>
             <button id="n" onclick="irA('n')">Notas</button>
             <button id="a" onclick="irA('a')">Área personal</button>
         </nav>
     </header>
     <main>
+        <div id="recordatorios">
+            
+        </div>
+        <div id="listas" hidden>
 
+        </div>
+        <div id="notas" hidden>
+
+        </div>
+        <div id="areaPersonal" hidden>
+
+        </div>
     </main>
     <script src="reloj.js"></script>
     <script src="navigation.js"></script>
