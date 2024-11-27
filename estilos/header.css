@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+header{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    height: 50%;
+    margin: 2vw 0;
+}
+button{
+    border: none;
+    background-color: rgb(102, 102, 255);
+    color: white;
+    font-size: 3vw;
+    padding: 0.7vw 1vw;
+    border-radius: 2vw;
+    width: 25vw;
+    justify-content: center;
+}
+.nav-button-active{
+    background-color: rgb(200, 200, 255);
+    color: rgb(89, 61, 253);
+    font-weight: 600;
+}
+#reloj{
+    display: flex;
+    text-align: center;
+    font-size: 7vw;
+    font-family: 'Quantico';
+    height: 50%;
+    align-items: center;
+    margin: 2vw 0 0 0;
+}
+#fecha{
+    font-size: 3vw;
+    margin: 2vw 0;
+}
+
+@media (min-width: 426px){
+    nav{
+        flex-direction: row;
+        width: 90%;
+    }
+    button{
+        font-size: 2.95vw;
+    }
+}
+@media (min-width: 769px){
+    header{
+        height: 218px;
+    }
+    nav{
+        gap: 7.68px;
+        height: 37.7px;
+        margin: 15.36px 0;
+    }
+    button{
+        font-size: 22px;
+        padding: 7.5px 5.3px;
+        border-radius: 15.3px;
+        width: 167px;
+    }
+    #reloj{
+        font-size: 54px;
+        height: 77px;
+        margin: 15px 0 0 0;
+    }
+    #fecha{
+        font-size: 23px;
+        margin: 15px 0;
+    }
+}
