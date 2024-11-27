@@ -38,12 +38,22 @@ button{
 }
 #reloj{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(89, 61, 253);
+    border: solid 1vw rgb(7, 0, 58);
+    border-radius: 5vw;
+    padding: 1vw 3vw;
+    margin-top: 2vw;
+    color: aliceblue;
+}
+#hora{
+    display: flex;
     text-align: center;
     font-size: 7vw;
     font-family: 'Quantico';
     height: 50%;
     align-items: center;
-    margin: 2vw 0 0 0;
 }
 #fecha{
     font-size: 3vw;
@@ -62,7 +72,7 @@ button{
 }
 @media (min-width: 769px){
     header{
-        height: 218px;
+        height: 247px;
     }
     nav{
         gap: 7.68px;
@@ -76,9 +86,14 @@ button{
         width: 167px;
     }
     #reloj{
+        border-width: 7px;
+        border-radius: 38px;
+        padding: 7.5px 23px;
+        margin-top: 15.3px;
+    }
+    #hora{
         font-size: 54px;
         height: 77px;
-        margin: 15px 0 0 0;
     }
     #fecha{
         font-size: 23px;

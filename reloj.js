@@ -8,7 +8,7 @@ setInterval(actReloj, 1000);
 
 function actReloj(){
     reloj = new Date();
-    document.getElementById("reloj").innerText = String(reloj.getHours()).padStart(2, '0') + ":" + String(reloj.getMinutes()).padStart(2, '0') + ":" + String(reloj.getSeconds()).padStart(2, '0');
+    document.getElementById("hora").innerText = String(reloj.getHours()).padStart(2, '0') + ":" + String(reloj.getMinutes()).padStart(2, '0') + ":" + String(reloj.getSeconds()).padStart(2, '0');
 }
 function actFecha(){
     let dia = diasSemana[reloj.getDay()].charAt(0).toUpperCase() + diasSemana[reloj.getDay()].slice(1);
