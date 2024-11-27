@@ -12,6 +12,6 @@ function actReloj(){
 }
 function actFecha(){
     let dia = diasSemana[reloj.getDay()].charAt(0).toUpperCase() + diasSemana[reloj.getDay()].slice(1);
-    fecha = `${dia}, ${reloj.getDay()} de ${meses[reloj.getMonth()]} de ${reloj.getFullYear()}`;
+    fecha = `${dia}, ${reloj.getDate()} de ${meses[reloj.getMonth()]} de ${reloj.getFullYear()}`;
     document.getElementById("fecha").innerText = fecha;
 }

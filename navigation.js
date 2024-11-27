@@ -62,26 +62,26 @@ function mostrarSeccion(seccion){
             seccionL.style.display = "none";
             seccionN.style.display = "none";
             seccionA.style.display = "none";
-            seccionR.style.display = "block";
+            seccionR.style.display = "flex";
 
             break;
         case "l":
             seccionR.style.display = "none";
             seccionN.style.display = "none";
             seccionA.style.display = "none";
-            seccionL.style.display = "block";
+            seccionL.style.display = "flex";
             break;
         case "n":
             seccionL.style.display = "none";
             seccionR.style.display = "none";
             seccionA.style.display = "none";
-            seccionN.style.display = "block";
+            seccionN.style.display = "flex";
             break;
         case "a":
             seccionL.style.display = "none";
             seccionN.style.display = "none";
             seccionR.style.display = "none";
-            seccionA.style.display = "block";
+            seccionA.style.display = "flex";
             break;
     }
 }
