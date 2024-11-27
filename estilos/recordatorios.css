@@ -36,3 +36,15 @@
 #addRecordatorio label{
     color: white;
 }
+.separator{
+    border-top: dashed white 2px;
+    width: 80%;
+}
+#listaRecordatorios{
+    background-color: rgb(76, 76, 169);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

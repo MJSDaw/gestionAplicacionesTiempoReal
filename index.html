@@ -28,14 +28,14 @@
             <div id="addRecordatorio">
                 <label for="titulo">Titulo: </label>
                 <input type="text" id="titulo">
-                <label for="fecha">Fecha: </label>
-                <input type="date" name="" id="">
-                <label for="hora">Hora: </label>
-                <input type="time">
-                <button>Añadir recordatorio</button>
+                <label for="form-fecha">Fecha: </label>
+                <input type="date" name="" id="form-fecha">
+                <label for="form-hora">Hora: </label>
+                <input type="time" id="form-hora">
+                <button onclick="addRecordatorio()">Añadir recordatorio</button>
             </div>
+            <span class="separator"></span>
             <div id="listaRecordatorios">
-
             </div>
         </div>
         <div id="listas" hidden>
@@ -51,5 +51,6 @@
     <script src="reloj.js"></script>
     <script src="navigation.js"></script>
     <script src="form-recordatorios.js"></script>
+    <script type="module" src="funcionamientoRecordatorios.js"></script>
 </body>
 </html>
