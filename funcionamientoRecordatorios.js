@@ -7,34 +7,65 @@ function addRecordatorio(){
     let titulo = String(document.getElementById("titulo").value);
     let fecha = document.getElementById("form-fecha").value;
     let hora = document.getElementById("form-hora").value;
-    let fechaHora = `${fecha}T${hora}`;
+    let fechaHora = `${fecha}@${hora}`;
     let recordatorio = new Recordatorio(titulo, fechaHora);
     listaRecordatorios.push(recordatorio);
     mostrarRecordatorios();
 }
-// Actualizado el atributo de Recordatorio, actualizad mas abajop tambien  el codigo
 
-function mostrarRecordatorios(){
+function mostrarRecordatorios() {
     let ordenado = [];
-    listaRecordatorios.forEach(recordatorio => {
-        if(listaRecordatorios.length > 1){
-            for (let index = 0; index < ordenado.length; index++) {
-                if(ordenado[index].fechaHora < recordatorio.fechaHora){
-                    ordenado.splice(index, 0, recordatorio);
-                }
-            }
-        } else {
-            ordenado.push(recordatorio);
+    const contenedor = document.getElementById("listaRecordatorios");
+
+    if (!Array.isArray(listaRecordatorios) || listaRecordatorios.length === 0) {
+        console.error("La lista de recordatorios está vacía o no es válida.");
+        contenedor.innerHTML = `
+            <div class="no-registros">
+                No hay recordatorios guardados.
+            </div>
+        `;  
+        return;
+    }
+
+    ordenado = listaRecordatorios.sort((a, b) => {
+        const fechaA = new Date(a.fechaHora.replace("@", "T")); 
+        const fechaB = new Date(b.fechaHora.replace("@", "T")); 
+        if (isNaN(fechaA) || isNaN(fechaB)) {
+            console.error("Error al procesar las fechas: ", a, b);
+            return 0; 
         }
+        return fechaA - fechaB;
     });
-    document.getElementById("listaRecordatorios").innerHTML = "";
+
+    contenedor.innerHTML = ""; 
+
     ordenado.forEach(recordatorio => {
-        let dia = String(recordatorio.fecha.getDate()).padStart(2, '0');
-        let mes = String(recordatorio.fecha.getMonth() + 1).padStart(2, '0'); 
-        let año = recordatorio.fecha.getFullYear(); 
-        let fechaFormateada = `${dia}-${mes}-${año}`;
-        document.getElementById("listaRecordatorios").innerHTML += `Titulo: ${recordatorio.titulo} <br> Fecha: ${fechaFormateada} <br> Hora: ${recordatorio.hora}`;
+        if (!recordatorio.fechaHora || !recordatorio.titulo) {
+            console.error("Recordatorio inválido: ", recordatorio);
+            return;
+        }
+
+        let [fecha, hora] = recordatorio.fechaHora.split("@");
+        if (!fecha || !hora) {
+            console.error("Formato de fechaHora inválido en recordatorio: ", recordatorio);
+            return;
+        }
+
+        let [ano, mes, dia] = fecha.split("-");
+        if (!ano || !mes || !dia) {
+            console.error("Formato de fecha incorrecto: ", fecha);
+            return;
+        }
+
+        let fechaFormateada = `${dia}-${mes}-${ano}`;
+        contenedor.innerHTML += `
+            <div class="tarjeta-recordatorio">
+                Título: ${recordatorio.titulo} <br>
+                Fecha: ${fechaFormateada} <br>
+                Hora: ${hora}
+            </div>`;
     });
 }
+
 
 window.addRecordatorio = addRecordatorio;
