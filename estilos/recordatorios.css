@@ -7,6 +7,7 @@
     align-items: center;
 }
 #addRecordatorio{
+    box-sizing: border-box;
     display: flex;
     background-color: rgb(102, 102, 255);
     flex-direction: column;
@@ -16,10 +17,12 @@
     padding: 2vw 3vw;
     margin: 3vw;
     box-sizing: border-box;
+    font-size: 3vw;
 }
 #addRecordatorio input{
     border: none;
     border-radius: 2vw;
+    font-size: 3vw;
     margin: 2vw 0;
     width: 35vw;
     text-align: center;
@@ -65,4 +68,31 @@
     border-radius: 10px;
     padding: 10px;
     margin-top: 15px;
+}
+
+@media (min-width: 769px){
+    #addRecordatorio input, #addRecordatorio button, #addRecordatorio{
+        font-size: 23px;
+    }
+    #addRecordatorio button{
+        width: 176.64px + (7.6 * 2);
+        height: 52px + 10;
+        padding: 7.68px 5.37px;
+    }
+}
+@media (min-width: 1025px){
+    #addRecordatorio{
+        width: 362px + 60.7px;
+        margin: 29.6px;
+        padding: 29.6px 19.7px;
+    }
+    #addRecordatorio input{
+        width: 25.997px + (7.168 *2);
+        height: 26px;
+        margin: 20.5px 0;
+    }
+    #addRecordatorio button{
+        width: 255.9px;
+        height: 39px;
+    }
 }
